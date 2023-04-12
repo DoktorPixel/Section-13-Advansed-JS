@@ -1,42 +1,24 @@
-// Complete the below questions using this array:
-const array = [
-  {
-    username: "john",
-    team: "red",
-    score: 5,
-    items: ["ball", "book", "pen"],
-  },
-  {
-    username: "becky",
-    team: "blue",
-    score: 10,
-    items: ["tape", "backpack", "pen"],
-  },
-  {
-    username: "susy",
-    team: "red",
-    score: 55,
-    items: ["ball", "eraser", "pen"],
-  },
-  {
-    username: "tyson",
-    team: "green",
-    score: 1,
-    items: ["book", "pen"],
-  },
-];
-const answer = array.map((user) => {
-  user.items = user.items.map((item) => {
-    return item + "!";
-  });
-  return user;
-});
-console.log(answer); // (4) [{…}, {…}, {…}, {…}] - answer будет новым массивом объектов user, в значении каждого элемента ключа items: добавится "!" (например ['ball!', 'book!', 'pen!'])
+class Animal {
+	constructor(name, type, color) {
+		this.name = name;
+		this.color = color;
+		this.type = type;
+	}
+}
 
-//Create an array using forEach that has all the usernames with a "!" to each of the usernames
+class Mamal extends Animal {
+	constructor(name, type, color) {
+		super(name, type, color)
+	}
+	sound() {
+		console.log(`Moooo I'm ${this.name} and I'm a ${this.color} ${this.type}`);
+	}
+}
 
-//Create an array using map that has all the usernames with a "? to each of the usernames
+const cow = new Mamal('Shelly', 'cow', 'brown');
+console.log(cow)
+cow.sound();
 
-//Filter the array to only include users who are on team: red
-
-//Find out the total score of all users using reduce
+console.log(cow.sound)
+console.log(Animal)
+console.log()
