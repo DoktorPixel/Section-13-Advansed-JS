@@ -1,12 +1,40 @@
-const users = { user1: 18273, user2: 92833, user3: 90315 };
-//Solution
-const usersArray = Object.entries(users);
-console.log(usersArray) // (3) [Array(2), Array(2), Array(2)]
+const basket = ["apples", "oranges", "grapes"];
+const detailedBasket = {
+  apples: 5,
+  oranges: 10,
+  grapes: 1000,
+};
 
-// // //#7 change the output array of the above to have the user's IDs multiplied by 2 -- Should output:[ [ 'user1', 36546 ], [ 'user2', 185666 ], [ 'user3', 180630 ] ]
-//Solution
-updatedUsersArray = usersArray.map((user) => [user[0], user[1] * 2]);
-console.log(updatedUsersArray) // [Array(2), Array(2), Array(2)] где ['user1', 36546] (каждое значение умноженно на 2)
+//1
+for (let i = 0; i < basket.length; i++) {
+  console.log(basket[i]);
+}
 
-const updatedUsers = Object.fromEntries(updatedUsersArray);
-console.log(updatedUsers);  // {user1: 36546, user2: 185666, user3: 180630}
+//2
+basket.forEach((item) => {
+  console.log(item);
+});
+
+for (item in detailedBasket) {
+  console.log(item);
+}
+
+for (item of basket) {
+  console.log(item);
+}
+
+// biggestNumberInArray([-1,0,3,100, 99, 2, 99]) should return 100;
+// Use at least 3 different types of javascript loops to write this:
+const array = [-1, 0, 3, 100, 99, 2, 99]; // should return 100
+const array2 = ["a", 3, 4, 2]; // should return 4
+const array3 = []; // should return 0
+function bigNumFunc(array) {
+  let bignumber = 0;
+  for (number of array) {
+    if (number > bignumber) {
+      bignumber = number;
+    }
+  }
+  return bignumber
+}
+console.log(bigNumFunc(array));
